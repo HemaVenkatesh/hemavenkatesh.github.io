@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hema Venkatesh B - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .skills {
+            background: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .skill-badge {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 40px;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .company-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .role-title {
+            font-size: 1.1em;
+            color: #667eea;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+        
+        .duration {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .achievements {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .achievements li {
+            padding-left: 25px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .achievements li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .education-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .education-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .degree {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .institution {
+            color: #667eea;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+        
+        .highlights {
+            background: #f0f7ff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .highlights ul {
+            list-style: none;
+        }
+        
+        .highlights li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .highlights li:before {
+            content: "🏆";
+            position: absolute;
+            left: 0;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Hema Venkatesh B</h1>
+            <p>Business Analytics Leader | IIM A, IIT M | CFA Level 1</p>
+            <p>Advertising • Analytics • Process Excellence</p>
+            <div class="contact-info">
+                <a href="tel:9953607097">📞 9953607097</a>
+                <a href="mailto:p14hemavb@iima.ac.in">✉️ p14hemavb@iima.ac.in</a>
+                <a href="https://github.com/yourusername" target="_blank">💻 GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">🔗 LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-badge">SQL</div>
+                <div class="skill-badge">Python</div>
+                <div class="skill-badge">AWS</div>
+                <div class="skill-badge">Advanced Excel</div>
+                <div class="skill-badge">Tableau</div>
+                <div class="skill-badge">Google Suite</div>
+                <div class="skill-badge">Data Studio</div>
+                <div class="skill-badge">AWS Bedrock</div>
+                <div class="skill-badge">LLMs</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="experience">
+            <h2>Work Experience (~10 Years)</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">Amazon</div>
+                        <div class="role-title">Business Analytics Leader (L6), Amazon Ads</div>
+                    </div>
+                    <div class="duration">Oct 2022 - Present</div>
+                </div>
+                <ul class="achievements">
+                    <li>Lead BA for support team handling millions of advertiser queries annually across multiple touch points to unblock advertiser revenue</li>
+                    <li>Architected global Channel & HOOP Strategy optimizing 24/7 service availability for advertisers across 4 global sites</li>
+                    <li>Leveraged SQL and Python to analyze 10,000+ data points, delivering a 23% reduction in redundancy</li>
+                    <li>Engineered an automated concurrency engine that utilized 12 months of historical patterns to reduce concurrency from 1.4 to <1.1, driving a 13% lift in Service Level adherence and saving $45k in monthly operational costs</li>
+                    <li>Leveraged AWS Bedrock, LLMs to develop custom chat agents for Program Managers, converting transcripts into actionable insights</li>
+                    <li>Leading a team of 16 analysts and BA managers to reduce network defects in supply chain via automation/process improvements</li>
+                    <li>Setup analytics performance management & delivery mechanisms as single threaded leader for ~3,000 HC org across 3 continents</li>
+                    <li>Unlocked ~$0.5mn savings via headcount reduction and built systems/interfaces to monitor business streams worth ~$400 mn</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">Udaan.com (Hive loop Technologies)</div>
+                        <div class="role-title">Senior Manager, Supply Chain Design</div>
+                    </div>
+                    <div class="duration">Oct 2020 - Oct 2022 (22 Months)</div>
+                </div>
+                <ul class="achievements">
+                    <li>Led overall vehicle planning with annual budget of ~180 cr. handling ~4,500 Cr GMV; Hit industry leading INR0.90/kg cost</li>
+                    <li>Reduced last mile cost by 30% (INR 12cr. p.a) & middle mile cost by 20% (INR 40cr. p.a.) via network aggregation, routing revamp</li>
+                    <li>Designed and executed Udaan's logistics network across 350+ Last Mile & 40+ consolidation centers pan India for 3 business units</li>
+                    <li>Achieved annual savings of ~10 Cr. through network optimization via process improvements & routing algorithm revamp</li>
+                    <li>Developed load orchestration platform with potential savings of INR ~10 cr by improving LH utilization; first of its kind at Udaan</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">OYO Rooms (Oravel Stays Pvt. Ltd.)</div>
+                        <div class="role-title">Head, Data Analytics, Centre of Excellence</div>
+                    </div>
+                    <div class="duration">Jul 2019 - Sep 2020 (13 Months)</div>
+                </div>
+                <ul class="achievements">
+                    <li>Led a 6-member team for OYO Frontier businesses – for strategy & business intelligence for senior leadership & investors</li>
+                    <li>Developed cluster recommendation engine to improve profitability by 50% using Text Mining and Geo-Analytics; a first in OYO</li>
+                    <li>Built location intelligence platform to reduce lease costs by 30%; Analyzed 10,000+ PG data via web scraping for benchmarking</li>
+                    <li>Revamped the business development app to decrease lead conversion TAT by ~60% and generated 3x more leads</li>
+                    <li>Developed the app for 500+ OYO partners to provide live visibility of the property performance & Recon; Adoption rate of 95%</li>
+                    <li>Solely responsible to drive performance of 500+ sales workforce pan India with annual expense of INR 25 Cr.</li>
+                    <li>Driven incentives for the sales force to improve productivity by 40%; Designed programs to accelerate learning curve of trainees</li>
+                    <li>Automated the entire dash boarding & reporting process over slack & email saving ~500 monthly man hours</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">IndiGo Airlines</div>
+                        <div class="role-title">Assistant Manager, Corporate Planning & Analysis</div>
+                    </div>
+                    <div class="duration">Sep 2017 - Jul 2019 (22 Months)</div>
+                </div>
+                <ul class="achievements">
+                    <li>Launch Manager - IndiGo's Regional Operations (72 seater Aircraft for short-haul routes), leading operational process planning</li>
+                    <li>Scaled up network by 6x (132 daily flights across 21 cities) and 4x revenue increase in 15 months to an annual turnover of ~INR 700 cr. as India's 2nd largest regional airline, fastest ever expansion in Indian aviation</li>
+                    <li>Liaised with COO as key resource for strategic negotiations with Airbus, France; solely handled contract penalties ~INR 28 cr.</li>
+                    <li>Responsible for Manpower planning (~400 pilots), Network Planning (UDAN scheme), Budgeting & financial viability analysis</li>
+                    <li>Project Manager - Launch of IndiGo's long haul International Operations to Europe (First ever entry for an Asian low cost carrier)</li>
+                    <li>Responsible for project design and financial modelling, P&L analysis; Formulated product definition and competitive positioning</li>
+                    <li>Worked with CEO for the operational and financial viability study (Annual cost ~INR 260 cr.); Longest route ever planned by IndiGo</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">Avendus Capital</div>
+                        <div class="role-title">Wealth Manager</div>
+                    </div>
+                    <div class="duration">May 2016 - Jul 2017 (14 Months)</div>
+                </div>
+                <ul class="achievements">
+                    <li>Provided investment advisory and portfolio management for HNIs and Corporate treasuries, incl. some marquee start-ups</li>
+                    <li>Ideated risk management methodology for fixed income portfolio (~INR 18,000 cr.); Automated data flows for client reviews</li>
+                    <li>Worked with CEO to revamp the firm's Equity Mutual Fund whitelisting methodology (~INR 1,500 cr. investment portfolio)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="degree">Post Graduate Programme (Finance & Strategy)</div>
+                    <div class="institution">IIM Ahmedabad</div>
+                    <div class="duration">2014 - 2016 | CGPA: 3.1/4.33</div>
+                </div>
+                <div class="education-card">
+                    <div class="degree">B.Tech + M.Tech, Mechanical Engineering</div>
+                    <div class="institution">IIT Madras</div>
+                    <div class="duration">2009 - 2014 | CGPA: 7.4/10</div>
+                </div>
+                <div class="education-card">
+                    <div class="degree">Class XI & XII</div>
+                    <div class="institution">A.P. Intermediate Board</div>
+                    <div class="duration">2007 - 2009 | 96%</div>
+                </div>
+                <div class="education-card">
+                    <div class="degree">Class X</div>
+                    <div class="institution">ICSE</div>
+                    <div class="duration">2007 | 92%</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements & Interests</h2>
+            <div class="highlights">
+                <ul>
+                    <li>National Winner - CNBC-AWAAZ's Act Now contest (INR 4+ lakhs prize) across 6 IIMs, ISB and XLRI; Invited to New York, USA to document and present global telecasted content from CNBC Studio</li>
+                    <li>Finalist, Innovative Student Project Award for master's thesis at IIT M (12 out of 800); Presented to Dean, Sponsored Research</li>
+                    <li>Co-authored a paper in Journal of Engineering Development and Research</li>
+                    <li>Winner, Online and offline Puzzle Championship, Shaastra 2014, national annual tech fest, IIT M</li>
+                    <li>2x Silver medalist, Basketball, IIT M Sports Championship</li>
+                    <li>Runner, Terry Fox Run (6 km), world's largest one day cancer awareness fund raiser; Eureka Run (5km)</li>
+                    <li>Trekking enthusiast - Member of YHAI, Chennai Trekking Club; Completed Sandakphu Gurdum (3636m.), Manali (Cycling), Auli (Ski Camp)</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Hema Venkatesh B. All rights reserved.</p>
+            <p>Built with HTML & CSS | Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+</body>
+</html>
