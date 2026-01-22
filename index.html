@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,8 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f5f5f5;
+            background: #0a0e27;
+            scroll-behavior: smooth;
         }
         
         .container {
@@ -29,16 +31,54 @@
             color: white;
             padding: 60px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .profile-photo-container {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+        
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            object-fit: cover;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 3em;
         }
         
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
         }
         
         header p {
             font-size: 1.2em;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
         
         .contact-info {
@@ -47,6 +87,8 @@
             gap: 30px;
             flex-wrap: wrap;
             margin-top: 20px;
+            position: relative;
+            z-index: 1;
         }
         
         .contact-info a {
@@ -55,10 +97,82 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            transition: transform 0.3s;
         }
         
         .contact-info a:hover {
+            transform: translateY(-3px);
             text-decoration: underline;
+        }
+        
+        nav {
+            background: #1a1f3a;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .quest-link {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-quest {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+        
+        .main-quest:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+        
+        .main-quest::before {
+            content: "⚔️ ";
+        }
+        
+        .side-quest {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+        }
+        
+        .side-quest:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.6);
+        }
+        
+        .side-quest::before {
+            content: "🎮 ";
+        }
+        
+        .completed-missions {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            box-shadow: 0 4px 15px rgba(67, 233, 123, 0.4);
+        }
+        
+        .completed-missions:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(67, 233, 123, 0.6);
+        }
+        
+        .completed-missions::before {
+            content: "✅ ";
         }
         
         .skills {
@@ -75,10 +189,16 @@
         }
         
         .skill-badge {
-            background: #f0f0f0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             padding: 15px;
             border-radius: 8px;
             font-weight: 500;
+            transition: transform 0.3s;
+        }
+        
+        .skill-badge:hover {
+            transform: scale(1.05);
         }
         
         section {
@@ -87,6 +207,34 @@
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .quest-section {
+            position: relative;
+            padding-top: 60px;
+        }
+        
+        .quest-badge {
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+        
+        .side-quest-badge {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+        }
+        
+        .completed-missions-badge {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            box-shadow: 0 4px 15px rgba(67, 233, 123, 0.4);
         }
         
         h2 {
@@ -99,6 +247,15 @@
         
         .experience-item, .education-item {
             margin-bottom: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+        
+        .experience-item:hover {
+            transform: translateX(5px);
         }
         
         .experience-header {
@@ -156,6 +313,11 @@
             padding: 20px;
             border-radius: 8px;
             border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+        
+        .education-card:hover {
+            transform: translateX(5px);
         }
         
         .degree {
@@ -171,7 +333,7 @@
         }
         
         .highlights {
-            background: #f0f7ff;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 100%);
             padding: 30px;
             border-radius: 8px;
             margin-top: 20px;
@@ -182,19 +344,103 @@
         }
         
         .highlights li {
-            padding: 10px 0;
-            padding-left: 25px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            padding-left: 50px;
             position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .highlights li:hover {
+            transform: translateX(5px);
         }
         
         .highlights li:before {
             content: "🏆";
             position: absolute;
-            left: 0;
+            left: 15px;
+            font-size: 1.5em;
+        }
+        
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .mission-card {
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #43e97b;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(67, 233, 123, 0.3);
+        }
+        
+        .mission-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .mission-icon {
+            font-size: 1.5em;
+        }
+        
+        .mission-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .mission-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .news-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            background: #f0f7ff;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .news-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .news-link::before {
+            content: "📰";
+        }
+        
+        .placeholder-link {
+            color: #999;
+            font-style: italic;
         }
         
         footer {
-            background: #333;
+            background: #1a1f3a;
             color: white;
             text-align: center;
             padding: 30px 0;
@@ -206,6 +452,11 @@
                 font-size: 2em;
             }
             
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+            
             section {
                 padding: 20px;
             }
@@ -213,12 +464,30 @@
             .experience-header {
                 flex-direction: column;
             }
+            
+            .nav-container {
+                gap: 20px;
+            }
+            
+            .quest-link {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+            
+            .missions-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
+            <div class="profile-photo-container">
+                <!-- Replace the src with your actual photo URL -->
+                <img src="your-photo-url.jpg" alt="Hema Venkatesh B" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="profile-photo" style="display: none;">👤</div>
+            </div>
             <h1>Hema Venkatesh B</h1>
             <p>Business Analytics Leader | IIM A, IIT M | CFA Level 1</p>
             <p>Advertising • Analytics • Process Excellence</p>
@@ -231,9 +500,17 @@
         </div>
     </header>
 
+    <nav>
+        <div class="nav-container">
+            <a href="#main-quest" class="quest-link main-quest">Main Quest: Professional Journey</a>
+            <a href="#completed-missions" class="quest-link completed-missions">Completed Missions</a>
+            <a href="#side-quests" class="quest-link side-quest">Side Quests: Adventures & Achievements</a>
+        </div>
+    </nav>
+
     <div class="skills">
         <div class="container">
-            <h2>Technical Skills</h2>
+            <h2>⚡ Power-Ups & Skills</h2>
             <div class="skills-grid">
                 <div class="skill-badge">SQL</div>
                 <div class="skill-badge">Python</div>
@@ -249,8 +526,9 @@
     </div>
 
     <div class="container">
-        <section id="experience">
-            <h2>Work Experience (~10 Years)</h2>
+        <section id="main-quest" class="quest-section">
+            <div class="quest-badge">⚔️ MAIN QUEST</div>
+            <h2>Professional Experience (~10 Years)</h2>
             
             <div class="experience-item">
                 <div class="experience-header">
@@ -344,8 +622,100 @@
             </div>
         </section>
 
+        <section id="completed-missions" class="quest-section">
+            <div class="quest-badge completed-missions-badge">✅ COMPLETED MISSIONS</div>
+            <h2>Notable Projects & Achievements</h2>
+            
+            <div class="missions-grid">
+                <div class="mission-card">
+                    <div class="mission-title">
+                        <span class="mission-icon">🤖</span>
+                        AI-Powered Chat Agents
+                    </div>
+                    <div class="mission-description">
+                        Developed custom chat agents using AWS Bedrock and LLMs to convert transcripts into actionable insights for Program Managers at Amazon Ads.
+                    </div>
+                    <div class="mission-links">
+                        <!-- Add your news article links here -->
+                        <a href="#" class="news-link placeholder-link">Add news article link here</a>
+                        <a href="#" class="news-link placeholder-link">Add blog post link here</a>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-title">
+                        <span class="mission-icon">📊</span>
+                        Concurrency Optimization Engine
+                    </div>
+                    <div class="mission-description">
+                        Engineered an automated engine analyzing 12 months of historical patterns, reducing concurrency from 1.4 to <1.1 and saving $45k monthly.
+                    </div>
+                    <div class="mission-links">
+                        <a href="#" class="news-link placeholder-link">Add case study link here</a>
+                        <a href="#" class="news-link placeholder-link">Add technical article link here</a>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-title">
+                        <span class="mission-icon">🚚</span>
+                        Udaan Logistics Network
+                    </div>
+                    <div class="mission-description">
+                        Designed and executed logistics network across 350+ Last Mile & 40+ consolidation centers, achieving INR 52cr annual savings.
+                    </div>
+                    <div class="mission-links">
+                        <a href="#" class="news-link placeholder-link">Add press release link here</a>
+                        <a href="#" class="news-link placeholder-link">Add industry article link here</a>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-title">
+                        <span class="mission-icon">🏨</span>
+                        OYO Cluster Recommendation Engine
+                    </div>
+                    <div class="mission-description">
+                        Built first-of-its-kind cluster recommendation engine using Text Mining and Geo-Analytics, improving profitability by 50%.
+                    </div>
+                    <div class="mission-links">
+                        <a href="#" class="news-link placeholder-link">Add publication link here</a>
+                        <a href="#" class="news-link placeholder-link">Add interview link here</a>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-title">
+                        <span class="mission-icon">✈️</span>
+                        IndiGo Regional Expansion
+                    </div>
+                    <div class="mission-description">
+                        Led India's fastest aviation expansion - scaled network by 6x (132 daily flights across 21 cities) with 4x revenue increase to INR 700cr.
+                    </div>
+                    <div class="mission-links">
+                        <a href="#" class="news-link placeholder-link">Add news coverage link here</a>
+                        <a href="#" class="news-link placeholder-link">Add aviation article link here</a>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-title">
+                        <span class="mission-icon">🌍</span>
+                        IndiGo Europe Operations
+                    </div>
+                    <div class="mission-description">
+                        Project Manager for IndiGo's first long-haul international operations to Europe - first ever entry for an Asian low-cost carrier.
+                    </div>
+                    <div class="mission-links">
+                        <a href="#" class="news-link placeholder-link">Add announcement link here</a>
+                        <a href="#" class="news-link placeholder-link">Add analysis article link here</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="education">
-            <h2>Education</h2>
+            <h2>🎓 Education & Training</h2>
             <div class="education-grid">
                 <div class="education-card">
                     <div class="degree">Post Graduate Programme (Finance & Strategy)</div>
@@ -370,8 +740,9 @@
             </div>
         </section>
 
-        <section id="achievements">
-            <h2>Achievements & Interests</h2>
+        <section id="side-quests" class="quest-section">
+            <div class="quest-badge side-quest-badge">🎮 SIDE QUESTS</div>
+            <h2>Adventures, Achievements & Interests</h2>
             <div class="highlights">
                 <ul>
                     <li>National Winner - CNBC-AWAAZ's Act Now contest (INR 4+ lakhs prize) across 6 IIMs, ISB and XLRI; Invited to New York, USA to document and present global telecasted content from CNBC Studio</li>
@@ -379,18 +750,4 @@
                     <li>Co-authored a paper in Journal of Engineering Development and Research</li>
                     <li>Winner, Online and offline Puzzle Championship, Shaastra 2014, national annual tech fest, IIT M</li>
                     <li>2x Silver medalist, Basketball, IIT M Sports Championship</li>
-                    <li>Runner, Terry Fox Run (6 km), world's largest one day cancer awareness fund raiser; Eureka Run (5km)</li>
-                    <li>Trekking enthusiast - Member of YHAI, Chennai Trekking Club; Completed Sandakphu Gurdum (3636m.), Manali (Cycling), Auli (Ski Camp)</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Hema Venkatesh B. All rights reserved.</p>
-            <p>Built with HTML & CSS | Hosted on GitHub Pages</p>
-        </div>
-    </footer>
-</body>
-</html>
+                    <li>Runner, Terry Fox Run (6 km
